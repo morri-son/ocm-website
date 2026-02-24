@@ -9,14 +9,29 @@ toc: true
 
 One sentence: what you will achieve.
 
-{{< callout type="note" >}}
-**You will end up with**
+## You'll end up with
 
 - A concrete outcome (artifact/config/state)
 - A verifiable success condition
-{{< /callout >}}
 
 **Estimated time:** ~X minutes
+
+## Workflow (optional)
+
+Include a diagram only if it clarifies the process. Keep it simple (3–5 nodes max).
+
+```mermaid
+flowchart LR
+    A[Input] --> B[ocm command] --> C[Output]
+    
+    style A fill:#e1f5ff,color:#000
+    style B fill:#fff4e6,color:#000
+    style C fill:#e8f5e9,color:#000
+```
+
+One sentence explaining what this diagram shows.
+
+See [Diagram Color Guide]({{< relref "content_templates/template-tutorial.md#diagram-color-guide" >}}) for consistent styling across all documentation.
 
 ## Prerequisites
 
@@ -135,14 +150,7 @@ Remove resources created:
 
 ## Next steps
 
-{{< card-grid >}}
-{{< card link="docs/concepts/signing" title="Signing Concept" icon="shield-check" >}}
-Understand signature verification in OCM
-{{< /card >}}
-{{< card link="docs/tutorials/secure-supply-chain" title="Secure Supply Chain Tutorial" icon="graduation-cap" >}}
-Build a complete signing workflow
-{{< /card >}}
-{{< /card-grid >}}
+- [How-to: <name>]({{< relref "docs/how-to/<file>.md" >}})
 
 ## Related documentation
 
@@ -167,4 +175,3 @@ and ensure the following:
 - [ ] Use `{{< tabs >}}` for variants (different approaches, platforms, configurations)
 - [ ] Troubleshooting with symptom-cause-fix
 - [ ] Working relref links
-- [ ] `{{< card-grid >}}` for "Next steps" navigation

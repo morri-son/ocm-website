@@ -14,27 +14,82 @@ hasMermaid: true
 ```
 {{< /callout >}}
 
-## Overview
-
-Write 2–4 sentences that set the scene and explain *why* you would do this.
+Write 1–2 sentences that set the scene and explain *why* you would do this.
 Avoid deep background. Link to the relevant concept(s) instead.
 
-**Estimated time:** ~X minutes
+## What You'll Learn
 
-{{< callout type="note" >}}
-**What you'll learn**
+By the end of this tutorial, you will:
 
 - What you can do by the end (outcome #1)
 - One key concept you will understand (outcome #2)
 - How to validate your success (outcome #3)
-{{< /callout >}}
 
-{{< callout type="note" >}}
-**Audience & assumptions**
+## How It Works
 
-- Who this tutorial is for (e.g., "You're an OCM CLI user who has already created a component version")
-- What we assume you already know
-{{< /callout >}}
+```mermaid
+flowchart LR
+    A[Input/Start] -- "command" --> B[OCM Artifact]
+    B -- "command" --> C[(Output/Registry)]
+    
+    style A fill:#e1f5ff,color:#000
+    style B fill:#fff4e6,color:#000
+    style C fill:#e8f5e9,color:#000
+```
+
+Write 1–2 sentences explaining the workflow shown in the diagram.
+
+**Estimated time:** ~X minutes
+
+### Diagram Style Guide
+
+Choose the appropriate style for your diagram based on complexity and purpose:
+
+#### Style 1: Minimal (Recommended for simple workflows)
+
+Use **no colors** for clean, professional diagrams. Only highlight success/failure states when relevant:
+
+```mermaid
+flowchart LR
+    A[Input] --> B[Process]
+    B --> C[Output]
+    
+    style C fill:#dcfce7,color:#166534
+```
+
+**When to use:**
+- Simple linear workflows (3-5 steps)
+- Clear structure that speaks for itself
+- No need to categorize different types of nodes
+
+#### Style 2: Categorical (For complex workflows)
+
+Use consistent colors to categorize different types of nodes. **Always include `color:#000`** in every style declaration to ensure readable text in dark mode.
+
+```mermaid
+flowchart LR
+    A[Input] --> B[OCM Component]
+    B --> C[Output]
+    
+    style A fill:#e1f5ff,color:#000
+    style B fill:#fff4e6,color:#000
+    style C fill:#e8f5e9,color:#000
+```
+
+| Category | Color | Hex | Text Color | Usage |
+|----------|-------|-----|------------|-------|
+| Input/Start | Light blue | `#e1f5ff` | `#000` | Files, configs, starting points |
+| OCM Artifacts | Light orange | `#fff4e6` | `#000` | CTF, Component, Resource, Repository |
+| Kubernetes/Flux | Light purple | `#f3e5f5` | `#000` | OCIRepository, HelmRelease, Controllers |
+| Output/Result | Light green | `#e8f5e9` | `#000` | Deployed App, Registry, final state |
+| Success | Green | `#dcfce7` | `#166534` | ✓ Valid, Verified, Passed |
+| Failure | Red | `#fee2e2` | `#991b1b` | ✗ Invalid, Failed, Error |
+| Security/Keys | Light yellow | `#fef9c3` | `#000` | Private/Public keys, signatures |
+
+**When to use:**
+- Complex workflows with multiple node types (6+ steps)
+- Need to distinguish between different categories
+- Multiple parallel flows or decision trees
 
 ## How It Works
 
@@ -51,7 +106,7 @@ This gives learners a mental model before diving into steps.
 
 ## Prerequisites
 
-- [OCM CLI]({{< relref "docs/getting-started/install.md" >}}) installed
+- [OCM CLI]({{< relref "docs/getting-started/ocm-cli-installation.md" >}}) installed
 - Access to required repositories/services (example: `ghcr.io`)
 - Any required credentials (example: GitHub token with package write access)
 
@@ -262,17 +317,7 @@ rm component-constructor.yaml
 
 ## Next steps
 
-{{< card-grid >}}
-{{< card link="docs/tutorials/transfer-component" title="Transfer a Component Version" icon="arrow-right" >}}
-Learn how to transfer your component to remote repositories
-{{< /card >}}
-{{< card link="docs/concepts/versioning" title="Component Versioning" icon="book" >}}
-Understand OCM's versioning strategy
-{{< /card >}}
-{{< card link="docs/how-to/add-resources" title="Add Multiple Resources" icon="puzzle" >}}
-See how to add Helm charts, images, and more
-{{< /card >}}
-{{< /card-grid >}}
+- [How-to: <name>]({{< relref "docs/how-to/<file>.md" >}})
 
 ## Related documentation
 
@@ -285,7 +330,7 @@ See how to add Helm charts, images, and more
 ## ✓ Before publishing
 
 Make sure to comply to our [CONTRIBUTING guide](../CONTRIBUTING.md),
-check the [Tutorial Writing Checklist](../CONTRIBUTING.md#turorial-guide-checklist),
+check the [Tutorial Writing Checklist](../CONTRIBUTING.md#tutorial-guide-checklist),
 and ensure the following:
 
 - [ ] Title describes what learner will accomplish
@@ -299,5 +344,4 @@ and ensure the following:
 - [ ] Success indicators after major steps
 - [ ] "What you've learned" summary
 - [ ] Troubleshooting for tutorial-specific issues
-- [ ] `{{< card-grid >}}` for "Next steps" navigation
 - [ ] Working `relref` links to Concepts for "why" questions
