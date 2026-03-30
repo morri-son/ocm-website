@@ -243,7 +243,7 @@ Ready to try OCM v2? Pick your path:
 {{< step >}}
 **Sign and Verify**
 
-[Establish provenance with RSA signatures](/docs/tutorials/sign-and-verify-components/)
+[Establish provenance with RSA signatures](/docs/tutorials/signing-and-verification/)
 {{< /step >}}
 {{< step >}}
 **Transfer across an Air Gap**
